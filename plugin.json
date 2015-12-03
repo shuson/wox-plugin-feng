@@ -1,0 +1,12 @@
+{
+  "ID":"wss2578088f511e5b07e851f22j21s32",
+  "ActionKeyword":"feng",
+  "Name":"feng",
+  "Description":"威锋",
+  "Author":"nevermoi",
+  "Version":"0.0.1",
+  "Language":"python",
+  "Website":"https://github.com/shuson/wox-plugin-feng",
+  "IcoPath": "img\\feng.png",
+  "ExecuteFileName":"feng.py"
+}
