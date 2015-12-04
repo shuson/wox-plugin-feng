@@ -65,7 +65,7 @@ class Main(Wox):
 	return result
     
     def open_url(self, url):
-	webbrowser.get("C:/Program Files (x86)/Google/Chrome/Application/chrome.exe %s").open(url)
+	webbrowser.open(url)
 
 if __name__ == '__main__':
     Main()
