@@ -9,7 +9,8 @@ import requests
 from wox import Wox,WoxAPI
 from bs4 import BeautifulSoup
 
-URL = 'http://bbs.feng.com/forum.php?mod=forumdisplay&filter=author&orderby=dateline&fid='
+BasicUrl = "http://bbs.feng.com/"
+URL = 'forum.php?mod=forumdisplay&filter=author&orderby=dateline&fid='
 
 def full2half(uc):
     """Convert full-width characters to half-width characters.
@@ -30,7 +31,7 @@ class Main(Wox):
 	return requests.get(url)
 			
     def query(self, param):
-        url = URL
+        url = BasicUrl + URL
         fname = param.strip()
         if fname == 'mac':
             url = url + "68"
@@ -56,7 +57,7 @@ class Main(Wox):
                 'IcoPath': os.path.join('img', 'feng.png'),
                 'JsonRPCAction': {
                     'method': 'open_url',
-                    'parameters': [ptitle['href']]
+                    'parameters': [BasicUrl+ptitle['href']]
                 }
             }
             result.append(item)
@@ -64,7 +65,7 @@ class Main(Wox):
 	return result
     
     def open_url(self, url):
-	webbrowser.open(url)
+	webbrowser.get("C:/Program Files (x86)/Google/Chrome/Application/chrome.exe %s").open(url)
 
 if __name__ == '__main__':
     Main()
