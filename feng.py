@@ -22,13 +22,13 @@ class Main(Wox):
   
     def request(self,url):
 	#get system proxy if exists
-        if self.proxy and self.proxy.get("enabled") and self.proxy.get("server"):
-	    proxies = {
-		"http":"http://{}:{}".format(self.proxy.get("server"),self.proxy.get("port")),
-		"https":"http://{}:{}".format(self.proxy.get("server"),self.proxy.get("port"))
-	    }
-	    return requests.get(url,proxies = proxies)
-	return requests.get(url)
+	if self.proxy and self.proxy.get("enabled") and self.proxy.get("server"):
+            proxies = {
+                "http":"http://{}:{}".format(self.proxy.get("server"),self.proxy.get("port")),
+                "https":"http://{}:{}".format(self.proxy.get("server"),self.proxy.get("port"))
+            }
+            return requests.get(url,proxies = proxies)
+        return requests.get(url)
 			
     def query(self, param):
         url = BasicUrl + URL
@@ -37,6 +37,8 @@ class Main(Wox):
             url = url + "68"
         elif fname == 'ershou':
             url = url + "29"
+        elif fname == 'xianmian':
+            url = url + "406"
         else:
             url = url + "601"
                 
